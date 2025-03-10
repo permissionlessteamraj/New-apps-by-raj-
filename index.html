@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100+ Advanced Apps Website</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #007BFF;
+}
+
+header .social-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .social-links img {
+    height: 30px;
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Home Section */
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #007BFF, #00BFFF);
+    color: white;
+    text-align: center;
+}
+
+.home-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff4a3d;
+    transform: scale(1.1);
+}
+
+/* Apps Section */
+.apps-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.search-bar {
+    margin-bottom: 30px;
+}
+
+#search-input {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#search-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.app-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.app-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.app-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.app-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.app-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.app-card button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.app-card button:hover {
+    background-color: #0056b3;
+}
+
+.download-link {
+    margin-top: 10px;
+    animation: fadeIn 0.5s;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Loading Animation */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007BFF;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}</style></head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Website Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#apps">Apps</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="https://t.me/yourchannel" target="_blank">
+                <img src="images/telegram.png" alt="Telegram">
+            </a>
+            <button id="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1>Welcome to the Ultimate Apps Hub</h1>
+            <p>Download 100+ advanced apps for free! Explore the latest tools and utilities.</p>
+            <a href="#apps" class="cta-button">Explore Apps</a>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="apps-section">
+        <h2>100+ Apps</h2>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search apps...">
+            <button id="search-button"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="app-list">
+            <!-- Apps will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>For any queries, reach out to us via Telegram.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Advanced Apps Website. All rights reserved.</p>
+    </footer>
+
+    <!-- Loading Animation -->
+    <div id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <script>// Sample Apps Data
+const apps = [
+    { name: "App 1", icon: "images/app1.png", downloadLink: "downloads/app1.zip" },
+    { name: "App 2", icon: "images/app2.png", downloadLink: "downloads/app2.zip" },
+    // Add 100+ apps here
+];
+
+// Load Apps
+const appList = document.querySelector(".app-list");
+const loading = document.getElementById("loading");
+
+function loadApps() {
+    loading.style.display = "flex";
+    setTimeout(() => {
+        apps.forEach(app => {
+            const appCard = document.createElement("div");
+            appCard.classList.add("app-card");
+            appCard.innerHTML = `
+                <img src="${app.icon}" alt="${app.name}">
+                <h3>${app.name}</h3>
+                <button onclick="downloadApp('${app.name}')">Download</button>
+                <div id="${app.name}-download" class="download-link hidden">
+                    <a href="${app.downloadLink}" download>Click here to download</a>
+                </div>
+            `;
+            appList.appendChild(appCard);
+        });
+        loading.style.display = "none";
+    }, 2000); // Simulate loading delay
+}
+
+// Download App Function
+function downloadApp(appName) {
+    const downloadLink = document.getElementById(`${appName}-download`);
+    downloadLink.classList.toggle("hidden");
+
+    // Auto-hide the download link after 5 seconds
+    setTimeout(() => {
+        downloadLink.classList.add("hidden");
+    }, 5000);
+}
+
+// Search Functionality
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+
+searchButton.addEventListener("click", () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredApps = apps.filter(app => app.name.toLowerCase().includes(searchTerm));
+    appList.innerHTML = "";
+    filteredApps.forEach(app => {
+        const appCard = document.createElement("div");
+        appCard.classList.add("app-card");
+        appCard.innerHTML = `
+            <img src="${app.icon}" alt="${app.name}">
+            <h3>${app.name}</h3>
+            <button onclick="downloadApp('${app.name}')">Download</button>
+            <div id="${app.name}-download" class="download-link hidden">
+                <a href="${app.downloadLink}" download>Click here to download</a>
+            </div>
+        `;
+        appList.appendChild(appCard);
+    });
+});
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    darkModeToggle.innerHTML = document.body.classList.contains("dark-mode") ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+});
+
+// Load Apps on Page Load
+window.onload = loadApps;</script>
+</body>
+  </html>
